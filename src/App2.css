@@ -1,0 +1,231 @@
+/* Font */
+@font-face {
+  font-family: "IM Fell English";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/imfellenglish/v14/Ktk1ALSLW8zDe0rthJysWrnLsAzHEKOY.woff2)
+    format("woff2");
+}
+
+/* Variables */
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #b5b5b5;
+
+  --primary-bg-color: #000000;
+  --primary-bg-color-botom: #b5b5b5;
+  --secondary-bg-color: #141414;
+
+  --menu-height: 100px;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: var(--primary-color);
+  font-family: serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Typography */
+nav,
+h1 {
+  font-family: "IM Fell English";
+  font-size: 32px;
+}
+
+/* Menu */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--menu-height);
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  background-color: var(--primary-bg-color);
+  border-bottom: 1px solid var(--primary-bg-color-botom);
+  z-index: 1000;
+}
+
+.menu-left {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.menu-socials {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 24px;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: color 0.25s ease, transform 0.25s ease, font-size 0.25s ease;
+}
+
+.menu-link.active {
+  color: var(--primary-color);
+  font-size: 34px;
+  transform: translateY(-2px);
+}
+
+.img {
+  width: 80px;
+}
+
+.icon {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* Page */
+.page {
+  background-color: var(--secondary-bg-color);
+  min-height: calc(100vh - var(--menu-height));
+}
+
+.section {
+  background-color: var(--secondary-bg-color);
+  margin-top: var(--menu-height);
+  padding: 20px;
+  font-size: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page h1 {
+  margin-left: 20px;
+}
+
+/* Home */
+.page .image-left {
+  width: 400px;
+  float: left;
+  margin: 0 40px 20px 0;
+}
+
+/* Shop */
+.page .mershandises {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.page .mershandise h1 {
+  text-align: center;
+  margin: 8px 0;
+}
+
+.page .image-mersh {
+  width: 100%;
+}
+
+/* Parallax fade */
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* ========================= */
+/* Responsive – Tablet/Mobile */
+/* ========================= */
+
+@media (max-width: 768px) {
+  nav,
+  h1 {
+    font-size: 24px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .menu-left {
+    order: 1;
+  }
+
+  .menu-socials {
+    order: 2;
+  }
+
+  .menu-center {
+    order: 3;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .menu-link {
+    font-size: 18px;
+  }
+
+  .menu-link.active {
+    font-size: 20px;
+    transform: none;
+  }
+
+  .icon {
+    font-size: 28px;
+  }
+
+  .page {
+    padding: 16px;
+  }
+
+  .page h1 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .page .image-left {
+    float: none;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+}
