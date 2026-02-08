@@ -31,6 +31,8 @@ body {
   overflow-x: hidden;
   color: var(--primary-color);
   font-family: serif;
+
+  scrollbar-color: var(--primary-color) var(--secondary-bg-color);
 }
 
 ul {
@@ -89,7 +91,10 @@ h1 {
 .menu-link {
   text-decoration: none;
   color: var(--secondary-color);
-  transition: color 0.25s ease, transform 0.25s ease, font-size 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease,
+    font-size 0.25s ease;
 }
 
 .menu-link.active {
@@ -193,6 +198,7 @@ h1 {
 
   .menu-socials {
     order: 2;
+    margin-left: auto;
   }
 
   .menu-center {
